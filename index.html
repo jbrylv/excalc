@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AQ Hesaplama</title>
+    <title>Excalc</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -60,7 +60,7 @@
             <label for="d">Count</label>
             <input type="number" id="d" required>
 
-            <button type="submit">Enter</button>
+            <button type="submit">Calculate</button>
         </form>
         <b><div id="result"></div></b>
     </div>
@@ -78,7 +78,7 @@
                     let lastAQ = AQ[i - 1];
                     let lastE = E[i - 1];
 
-                    let newAQ = lastE - (lastE * 0.09502935);
+                    let newAQ = lastE - (lastE * 0.095);
                     let newE = (lastE + newAQ) / 2;
 
                     AQ.push(newAQ);
