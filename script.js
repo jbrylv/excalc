@@ -11,7 +11,7 @@ document.getElementById('form1').addEventListener('submit', function (event) {
             let lastE = E[i - 1];
 
             let newAQ = lastE - (lastE * 0.095);
-            let newE = (lastE + newAQ) / 6;
+            let newE = (lastE + newAQ) / 2;
 
             AQ.push(newAQ);
             E.push(newE);
@@ -21,7 +21,7 @@ document.getElementById('form1').addEventListener('submit', function (event) {
     }
 
     const result = calculateAQ(n, d);
-    document.getElementById('result').textContent = `LIQ: ${result.toFixed(4)}`;
+    document.getElementById('result').textContent = `LIQ: ${result.toFixed(8)}`;
 });
 
 
