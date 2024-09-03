@@ -11,7 +11,7 @@ document.getElementById('form1').addEventListener('submit', function (event) {
             let lastE = E[i - 1];
 
             let newAQ = lastE - (lastE * 0.095);
-            let newE = (lastE + newAQ) / 2;
+            let newE = (lastE + newAQ) / 6;
 
             AQ.push(newAQ);
             E.push(newE);
