@@ -17,12 +17,12 @@ body {
     padding: 20px;
     border-radius: 8px;
 }
-  
-  @media (max-width: 768px) {
+
+@media (max-width: 768px) {
     .container {
-      width: 80%;
+        width: 80%;
     }
-  }
+}
 
 input {
     margin-bottom: 10px;
@@ -37,6 +37,8 @@ input {
 }
 
 button {
+    width: 2rem;
+    height: 2rem;
     padding: 10px;
     display: inline-block;
     background-color: #212121;
@@ -45,7 +47,18 @@ button {
     font-size: 16px;
     border-radius: 4px;
     cursor: pointer;
+    text-align: center;
 }
+
+#long {
+    background-color: green;
+}
+
+#short {
+    background-color: red;
+}
+
+
 
 button:hover {
     background-color: #0056b3;
