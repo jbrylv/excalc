@@ -1,7 +1,9 @@
-document.getElementById('form1').addEventListener('submit', function (event) {
+
+document.getElementById('long').addEventListener('click', function (event) {
     event.preventDefault();
     const n = parseFloat(document.getElementById('n').value);
     const d = parseInt(document.getElementById('d').value);
+
     function calculateAQ(n, d) {
         let AQ = [n];
         let E = [n];
@@ -21,9 +23,36 @@ document.getElementById('form1').addEventListener('submit', function (event) {
     }
 
     const result = calculateAQ(n, d);
-    document.getElementById('result').textContent = `LIQ: ${result.toFixed(8)}`;
+    document.getElementById('result').textContent = result.toFixed(8);
 });
 
+
+document.getElementById('short').addEventListener('click', function (event) {
+    event.preventDefault();
+    const n = parseFloat(document.getElementById('n').value);
+    const d = parseInt(document.getElementById('d').value);
+
+    function calculateAQ(n, d) {
+        let AQ = [n];
+        let E = [n];
+
+        for (let i = 1; i <= d; i++) {
+            let lastAQ = AQ[i - 1];
+            let lastE = E[i - 1];
+
+            let newAQ = lastE + (lastE * 0.095);
+            let newE = (lastE + newAQ) / 2;
+
+            AQ.push(newAQ);
+            E.push(newE);
+        }
+
+        return AQ[d];
+    }
+
+    const result = calculateAQ(n, d);
+    document.getElementById('result').textContent = result.toFixed(8);
+});
 
 
 
@@ -40,7 +69,7 @@ document.getElementById('form2').addEventListener('submit', function (event) {
         } else {
             total = FP * (2 + 2 * (Math.pow(2, TC - 2) - 1));
         }
-        
+
         document.getElementById('result2').textContent = `Total: ${total.toFixed(2)}`;
 
     }
